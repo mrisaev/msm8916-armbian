@@ -75,8 +75,8 @@ jobs:
           sudo rm -rf temp
           popd
           echo "build_tag=Armbian_noble_save_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
-      - name: 上传 Armbian 镜像至 Release
-        uses: ncipollo/release-action@main
+      - name: Armbian 
+        uses: mrisaev/release-action@main
         with:
           artifacts: "msm8916-armbian/rootfs.img,msm8916-armbian/kernel/boot.img"
           name: ${{ steps.repack.outputs.build_tag }}
@@ -86,12 +86,12 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            ### 以下是 Armbian OS 镜像
-            - 本次固件基带为${{ inputs.armbian_board }}
-            - 系统信息：
-            - 默认用户名：root
-            - 默认密码：1234
-            - 全局配置命令：armbian-config
-            - WiFi名称：4G-UFI
-            - WiFi密码：12345678
-            - 如遇无法开机的情况请使用未超频内核boot-no-overclock.img
+            Here is the Armbian OS image.
+            - This firmware baseband is ${{ inputs.armbian_board }}
+            - System information:
+            Default user name: root
+            - Default password: 1234
+            - Global configuration command: armbian-config
+            WiFi name: 4G-UFI
+            - WiFi password: 12345678
+            - In case of unbootable, please use the unoverclocked kernel boot-no-overclock.img
