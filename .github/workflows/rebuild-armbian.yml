@@ -76,7 +76,7 @@ jobs:
           popd
           echo "build_tag=Armbian_noble_save_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
       - name: Armbian 
-        uses: mrisaev/release-action@main
+        uses: ncipollo/release-action@main
         with:
           artifacts: "msm8916-armbian/rootfs.img,msm8916-armbian/kernel/boot.img"
           name: ${{ steps.repack.outputs.build_tag }}
