@@ -24,7 +24,7 @@ jobs:
       - name: 安装依赖
         run: |
           sudo apt update -y
-          sudo apt-get install -y zip flex bison libncurses-dev gawk  libiberty-dev autoconf kmod bc build-essential gcc libc6 curl libstdc++6 git wget libssl-dev cpio p7zip-full img2simg qemu-user-static
+          sudo apt-get install -y zip flex bison libncurses-dev gawk  libiberty-dev autoconf kmod bc build-essential gcc libc6 curl libstdc++6 git wget libssl-dev cpio p7zip-full android-sdk-libsparse-utils qemu-user-static
           sudo apt clean
       - name: 下载源码
         run: |
